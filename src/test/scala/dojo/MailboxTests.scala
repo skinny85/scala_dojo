@@ -5,10 +5,8 @@ import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.junit.JUnitRunner
 import org.junit.runner.RunWith
 
-
 @RunWith(classOf[JUnitRunner])
-class MailboxTests extends FunSuite with ShouldMatchers{
-
+class MailboxTests extends FunSuite with ShouldMatchers {
   test("should return pong when sent ping"){
     val response = new MailBox().handleMsg(Ping)
     response should equal (Pong)
@@ -49,5 +47,4 @@ class MailboxTests extends FunSuite with ShouldMatchers{
     val response = new MailBox().receive(("echo", "Goodbye World"))
     response should equal ("Goodbye World")
   }
-
 }
